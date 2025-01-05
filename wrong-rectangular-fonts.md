@@ -5,7 +5,13 @@ Happening in the tab description and on the actual page.
 # Solution
 ```bash
 sudo apt install fonts-recommended
+# Noto font families for Traditional Chinese, Simplified Chinese, Japanese and Korean
+sudo apt install fonts-noto-cjk
+# stuff by Microsoft "Microsoft True Type Core Fonts for the Web" in Debian 'contrib'
+sudo apt install ttf-mscorefonts-installer
 ```
 
 # References
 - [Fonts - Debian Wiki](https://wiki.debian.org/Fonts)
+- [Package: fonts-noto-cjk](https://packages.debian.org/sid/fonts-noto-cjk)
+- [Package: ttf-mscorefonts-installer](https://packages.debian.org/bookworm/ttf-mscorefonts-installer)
