@@ -7,4 +7,4 @@ When running `fwupdgmr update`, the program might complain about disk space at `
 
 # Restore original structure and check disk space on /boot/efi
 - Be sure to move back directories to their original places
-- After running `fwupdmgr update` successfully, `boot/efi` might occupy more space, because inside `/boot/efi/EFI/debian/fw` is a large `fwupd-xxxxxx.cap` file, which was needed for update the firmware
+- After running `fwupdmgr update` successfully, `/boot/efi` might occupy more space, because inside `/boot/efi/EFI/debian/fw` is a large `fwupd-xxxxxx.cap` file, which was needed for firmware update
