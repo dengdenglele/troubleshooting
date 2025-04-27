@@ -7,9 +7,10 @@ Data is persistent and thumb drive can be plugged into different host devices.
 - Problematic distros:
   - Debian
   - Kali
+  - Maybe more...
 
 ## Solution
-- A full disk installation of Ubuntu on an external device creates an bootloader structure which can be used universally on any external device
+- A full disk installation of Ubuntu (on an internal or external device) creates an bootloader structure which can be used universally on any external device
 - This bootloader structure can be copied to "problematic" distros and used after modifications
 - It might be necessary to mount /boot/efi partition, otherwise /boot/efi directory stays empty
 
@@ -35,14 +36,14 @@ total 4392
 - The name of the directory "ubuntu" can be changed into something else e.g. "kali" or "debian"
 - Within **ubuntu/grub.cfg** the existing UUID must be changed to the UUID of the /boot partition of the other distro
   - Output: search.fs_uuid <insert-the-new-UUID-here> root    
-  - Use "lsblk"
-  - and "blkid"
-- Open **ubuntu/BOOTX64.CSV** with VSCode
+  - Use `lsblk -f`
+  - Or "sudo blkid"
+- Change to root user `sudo su` and open **ubuntu/BOOTX64.CSV** with LibreOffice or VSCode
   - Output: shimx64.efi,Ubuntu,,This is the boot entry for ubuntu
   - It might be neccesary to copy BOOTX64.CSV somewhere else and adapt permissions before changes can be made
   - The boot entry (second field) for the BIOS can be changed, e.g. change "Ubuntu" to "Kali Linux"
-  - The last field allows to writes a description
-  - After changes were made, open BOOTX64.CSV with nano or vi and check and delete "strange" characters created by VSCode
+  - The last field allows to write a description
+  - After changes were made, open BOOTX64.CSV with nano or vi and check and delete "strange" characters at the beginning of the file when saved with LibreOffice or VSCode
 
 ## Sources
 
