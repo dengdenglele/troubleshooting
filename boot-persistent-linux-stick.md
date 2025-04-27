@@ -12,7 +12,8 @@ Data is persistent and thumb drive can be plugged into different host devices.
 ## Solution
 - A full disk installation of Ubuntu (on an internal or external device) creates an bootloader structure which can be used universally on any external device
 - This bootloader structure can be copied to "problematic" distros and used after modifications
-- It might be necessary to mount /boot/efi partition, otherwise /boot/efi directory stays empty
+- It might be necessary to mount `efi` partition, otherwise `/boot/efi` directory stays empty
+- The `efi` partition is usually the very first partition on a hard drive
 
 ```bash
 cd /boot/efi/EFI
@@ -32,16 +33,16 @@ total 4392
 -rwx------ 1 root root  966664 Aug 21 22:23 shimx64.efi
 ```
 
-- The .EFI and .efi files in both BOOT/ and ubuntu/ are binary files and must not be changed or deleted!
-- The name of the directory "ubuntu" can be changed into something else e.g. "kali" or "debian"
-- Within **ubuntu/grub.cfg** the existing UUID must be changed to the **UUID of the /boot partition** of the other distro
-  - Output: search.fs_uuid <insert-the-new-UUID-here> root    
-  - Use `lsblk -f`
-  - Or "sudo blkid"
-- Change to root user `sudo su` and open **ubuntu/BOOTX64.CSV** with LibreOffice or VSCode
-  - Output: shimx64.efi,Ubuntu,,This is the boot entry for ubuntu
+- The `.EFI and .efi` files in both `/boot/efi/EFI/BOOT/` and `/boot/efi/EFI/ubuntu/` are binary files and must not be changed or deleted
+- The name of the directory `/boot/efi/EFI/ubuntu/` can be changed into something else e.g. `kali/` or `debian/`
+- Change to root user `sudo su`
+- Within `/boot/efi/EFI/ubuntu/grub.cfg` **the existing UUID must be changed** to the UUID of the `/boot` of the other distro
+  - Use `lsblk -f` or `sudo blkid` to identify the **new UUID** of `/boot`
+  - Output first line: search.fs_uuid **"insert-the-new-UUID-here"** root    
+- Open `/boot/efi/EFI/ubuntu/BOOTX64.CSV` with LibreOffice or VSCode
+  - Output first line: shimx64.efi,**Ubuntu**,,This is the boot entry for ubuntu
   - It might be neccesary to copy BOOTX64.CSV somewhere else and adapt permissions before changes can be made
-  - The boot entry (second field) for the BIOS can be changed, e.g. change "Ubuntu" to "Kali Linux"
+  - The boot entry (second field) for the BIOS can be changed, e.g. change "Ubuntu" to "Kali Linux", "Linux Mint" etc. (spaces are allowed)
   - The last field allows to write a description
   - After changes were made, open BOOTX64.CSV with nano or vi and check and delete "strange" characters at the beginning of the file when saved with LibreOffice or VSCode
 
