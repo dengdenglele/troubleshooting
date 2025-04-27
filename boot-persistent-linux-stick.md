@@ -34,7 +34,7 @@ total 4392
 
 - The .EFI and .efi files in both BOOT/ and ubuntu/ are binary files and must not be changed or deleted!
 - The name of the directory "ubuntu" can be changed into something else e.g. "kali" or "debian"
-- Within **ubuntu/grub.cfg** the existing UUID must be changed to the UUID of the /boot partition of the other distro
+- Within **ubuntu/grub.cfg** the existing UUID must be changed to the **UUID of the /boot partition** of the other distro
   - Output: search.fs_uuid <insert-the-new-UUID-here> root    
   - Use `lsblk -f`
   - Or "sudo blkid"
