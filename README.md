@@ -1,25 +1,26 @@
 # This is a template, describe shortly
 What is the underlying problem? What can be improved
 
-## Issue
+## Issue 1
 - Platform
 - Application
 - When it appears
 
-
-## Solution
+### Solution
 - Short description
-  
-- Tested:
-- 
 ```bash
 # also some commands can be nice
 ```
-## Other solutions
 
+### Other solutions
+- Short description
 - Untested:
   - blabla
   - blablabla
+
+## Issue 2
+...
+### Solution
 
 ## References
 - [link1](about:blank)
