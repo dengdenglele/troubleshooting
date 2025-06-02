@@ -33,18 +33,19 @@ total 4392
 -rwx------ 1 root root  966664 Aug 21 22:23 shimx64.efi
 ```
 
+- Both directories, `/boot/efi/EFI/BOOT/` and `/boot/efi/EFI/ubuntu/`, must be copied to "problematic" distro
 - The `.EFI and .efi` files in both `/boot/efi/EFI/BOOT/` and `/boot/efi/EFI/ubuntu/` are binary files and must not be changed or deleted
-- The name of the directory `/boot/efi/EFI/ubuntu/` can be changed into something else e.g. `kali/` or `debian/`
+- The name of the directory `/boot/efi/EFI/ubuntu/` can be changed into something else e.g. `/boot/efi/EFI/kali/` or `/boot/efi/EFI/debian/`
 - Change to root user `sudo su`
 - Within `/boot/efi/EFI/ubuntu/grub.cfg` **the existing UUID must be changed** to the UUID of the `/boot` of the other distro
   - Use `lsblk -f` or `sudo blkid` to identify the **new UUID** of `/boot`
   - Output first line: search.fs_uuid **"insert-the-new-UUID-here"** root    
 - Open `/boot/efi/EFI/ubuntu/BOOTX64.CSV` with LibreOffice or VSCode
   - Output first line: shimx64.efi,**Ubuntu**,,This is the boot entry for ubuntu
-  - It might be neccesary to copy BOOTX64.CSV somewhere else and adapt permissions before changes can be made
+  - It might be neccesary to copy `BOOTX64.CSV` somewhere else and adapt permissions before changes can be made
   - The boot entry (second field) for the BIOS can be changed, e.g. change "Ubuntu" to "Kali Linux", "Linux Mint" etc. (spaces are allowed)
   - The last field allows to write a description
-  - After changes were made, open BOOTX64.CSV with nano or vi and check and delete "strange" characters at the beginning of the file when saved with LibreOffice or VSCode
+  - After changes were made, check `BOOTX64.CSV` with `nano` or `vi` and delete "strange" characters (o^@k^@a^@y^@ is okay) at the beginning of the file (first line) when saved with LibreOffice or VSCode
 
 ## Sources
 
