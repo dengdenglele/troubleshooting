@@ -13,7 +13,10 @@ Windows 11 can occasionally break grub. Or the user mistakenly deletes the boot 
   - `Select a language` &rarr; `English - English`
   - `Select your location` &rarr; `United States`
   - `Configure the keyboard` &rarr; `American English`
-  - `Configure the network` &rarr; `Do not configure the network at this time` &rarr; `Hostname: debian`
+  - `Configure the network`
+    - `Primary network interface` &rarr; `select any adapter (not WIFI if possible)`
+    - `Do not configure the network at this time`
+    - `Hostname: debian`
   - `Configure the clock`
 - `Enter rescue mode`
   - will autodetect encrypted volume &rarr; decrypt it
