@@ -20,7 +20,7 @@ Windows 11 can occasionally break grub. Or the user mistakenly deletes the boot 
     - `Hostname:` &rarr; `debian`
   - `Configure the clock`
 - `Enter rescue mode`
-  - will autodetect encrypted volume &rarr; decrypt it
+  - `Passphrase for /dev/<encrypted partition>` &rarr; `Continue` (this shall pop up automatically)
   - `Device to use as root file system:` &rarr; `/dev/<name of the volume group>/root`
   - `Mount separate /boot partition?` &rarr; `Yes`
   - `Mount separate /boot/efi partition?` &rarr; `Yes`
