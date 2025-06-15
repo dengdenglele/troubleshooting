@@ -24,8 +24,8 @@ Windows 11 can occasionally break grub. Or the user mistakenly deletes the boot 
   - `Device to use as root file system:` &rarr; `/dev/debian-volume-group-encyrpted/root`
   - `Mount separate /boot partition?` &rarr; `Yes`
   - `Mount separate /boot/efi partition?` &rarr; `Yes`
-  - `Rescue operation` &rarr; `Reinstall GRUB boot loader` (which is effectively running `sudo grub-install`)
-  - `Device for boot loader installation:` &rarr; `___leave_it_blank___` &rarr; `Continue` (compare reference!)
+  - `Rescue operations` &rarr; `Reinstall GRUB boot loader` 
+  - `Device for boot loader installation:` &rarr; `___leave_it_blank___` &rarr; `Continue` (which is effectively running `sudo grub-install`)
   - `Reboot the system`
 
 ## References
