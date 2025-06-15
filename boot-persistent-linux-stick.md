@@ -47,6 +47,12 @@ total 4392
   - The boot entry (second field) for the BIOS can be changed, e.g. change "Ubuntu" to "Kali Linux", "Linux Mint" etc. (spaces are allowed)
   - The last field allows to write a description (optional)
   - After changes were made, check `BOOTX64.CSV` with `nano` (`vi` does not display `^@`, if file content starts with strange characters) and delete "strange" characters (o^@k^@a^@y^@ is okay) at the beginning of the file (first line) when saved with LibreOffice or VSCode
+ 
+## Revert changes
+```bash
+sudo grub-install # reverts the changes in /boot/efi/EFI/<distro-name>/
+sudo update-grub # reload config based on changes in /etc/default/grub
+```
 
 ## Warnings
 - Do not try this approach, when Windows 10 is installed on the same disk (not checked for Windows 11 yet)
