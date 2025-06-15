@@ -1,4 +1,4 @@
-# Debian does not boot, due to problems with grub
+# Debian is not booting due to problems with grub
 Windows 11 can occasionally break grub. Or the user mistakenly deletes the boot entry "debian" in BIOS setting. Or other stupid things happen
 
 ## Issue
