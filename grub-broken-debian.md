@@ -1,4 +1,4 @@
-# This is a template, describe shortly
+# Debian does not boot, due to problems with grub
 Windows 11 can occasionally break grub. Or the user mistakenly deletes the boot entry "debian" in BIOS setting. Or other stupid things happen
 
 ## Issue
@@ -10,9 +10,9 @@ Windows 11 can occasionally break grub. Or the user mistakenly deletes the boot 
 - Prepare a Debian usb stick (netinst sufficient), and boot in UEFI mode, no network needed
 - Select `Advanced options...` &rarr; `...Rescue mode`
 - Stick with defaults
-  - `Select a language`
-  - `Select your location`
-  - `Configure the keyboard`
+  - `Select a language` &rarr; `English - English`
+  - `Select your location` &rarr; `United States`
+  - `Configure the keyboard` &rarr; `American English`
   - `Configure the network` &rarr; `Do not configure the network at this time` &rarr; `Hostname: debian`
   - `Configure the clock`
 - `Enter rescue mode`
