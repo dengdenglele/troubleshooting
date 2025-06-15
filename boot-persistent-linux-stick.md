@@ -48,5 +48,13 @@ total 4392
   - The last field allows to write a description (optional)
   - After changes were made, check `BOOTX64.CSV` with `nano` (`vi` does not display `^@`, if file content starts with strange characters) and delete "strange" characters (o^@k^@a^@y^@ is okay) at the beginning of the file (first line) when saved with LibreOffice or VSCode
 
+## Warnings
+- Do not try this approach, when Windows 10 is installed on the same disk (not checked for Windows 11 yet)
+- BIOS/UEFI will first look in the `/boot/efi/EFI/Microsoft/Boot` thus never loading linux, when selecting the drive directly from boot menu
+- `/boot/efi/EFI/BOOT` will be checked second (if ever)
+- To enforce usage of `/boot/efi/EFI/BOOT` required for Linux, a temporary solution would be renaming `/boot/efi/EFI/Microsoft/Boot` to `/boot/efi/EFI/Microsoft/NOT-Boot`
+
 ## Sources
+
+
 
