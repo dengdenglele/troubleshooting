@@ -9,9 +9,12 @@ sudo apt install fonts-recommended
 sudo apt install fonts-noto-cjk
 # stuff by Microsoft "Microsoft True Type Core Fonts for the Web" in Debian 'contrib'
 sudo apt install ttf-mscorefonts-installer
+# maybe only this last one required???
+sudo apt install fonts-noto
 ```
 
 # References
 - [Fonts - Debian Wiki](https://wiki.debian.org/Fonts)
 - [Package: fonts-noto-cjk](https://packages.debian.org/sid/fonts-noto-cjk)
 - [Package: ttf-mscorefonts-installer](https://packages.debian.org/bookworm/ttf-mscorefonts-installer)
+- [Package: fonts-noto](https://unix.stackexchange.com/questions/570390/mozilla-wont-show-special-characters-such-as-chinese-korean-japanese-etc)
