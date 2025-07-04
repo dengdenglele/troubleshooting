@@ -31,7 +31,7 @@ Jul 01 12:47:43 outback systemd[1]: systemd-logind.service: Consumed 1.405s CPU 
 
 ### Solution
 - Create a new directory for drop-in files
-- Create a drop-in file instead of adjusting `/etc/systemd/logind.conf
+- Create a drop-in file instead of adjusting `/etc/systemd/logind.conf`
   
 ```bash
 sudo mkdir /etc/systemd/logind.conf.d
