@@ -1,7 +1,7 @@
 # GNOME goes to sleep after entering username and password in credentials
 After login into GNOME, system immediately goes into sleep mode
 
-## Issuehttps://www.reddit.com/r/Proxmox/comments/kxdjrc/i_am_running_proxmox_on_a_thinkpad_laptop_how_can/
+## Issue
 - Ubuntu 22.04 on Thinkpad L14 Gen 5 with external peripherals
 - Right after login screen on gdm
   
