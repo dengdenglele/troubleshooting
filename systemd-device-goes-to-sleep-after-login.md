@@ -1,7 +1,7 @@
-# This is a template, describe shortly
+# GNOME goes to sleep after entering username and password in credentials
 After login into GNOME, system immediately goes into sleep mode
 
-## Issue 1
+## Issuehttps://www.reddit.com/r/Proxmox/comments/kxdjrc/i_am_running_proxmox_on_a_thinkpad_laptop_how_can/
 - Ubuntu 22.04 on Thinkpad L14 Gen 5 with external peripherals
 - Right after login screen on gdm
   
@@ -37,13 +37,9 @@ Jul 01 12:47:43 outback systemd[1]: systemd-logind.service: Consumed 1.405s CPU 
   
 ```bash
 sudo mkdir /etc/systemd/logind.conf.d
-cat <<EOF | sudo tee /etc/systemd/logind.conf.d/handlelogind.conf
+cat <<EOF | sudo tee /etc/systemd/logind.conf.d/handlelidswitch.conf
 [Login]
 HandleLidSwitch=ignore
-HandleLidSwitchExternalPower=ignore
-HandleLidSwitchDocked=ignore
-HandleSuspendKey=ignore
-HandleHibernateKey=ignore
 EOF
 ```
 
@@ -54,3 +50,4 @@ journalctl -u systemd-logind
 
 ## References
 - [Chapter 19. Here Documents](https://tldp.org/LDP/abs/html/here-docs.html)
+- [Reddit](https://www.reddit.com/r/Proxmox/comments/kxdjrc/i_am_running_proxmox_on_a_thinkpad_laptop_how_can/)
