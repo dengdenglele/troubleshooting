@@ -37,7 +37,8 @@ Jul 01 12:47:43 outback systemd[1]: systemd-logind.service: Consumed 1.405s CPU 
   
 ```bash
 sudo mkdir /etc/systemd/logind.conf.d
-cat <<EOF | sudo tee /etc/systemd/logind.conf.d/handlelogin.conf
+cat <<EOF | sudo tee /etc/systemd/logind.conf.d/handlelogind.conf
+[Login]
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
