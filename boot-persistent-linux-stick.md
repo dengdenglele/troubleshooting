@@ -9,7 +9,7 @@ Data is persistent and thumb drive can be plugged into different host devices.
   - Kali
   - Maybe more...
 
-## Solution
+## Solution (not recommended, prone to errors, better solution below)
 - A full disk installation of Ubuntu (on an internal or external device) creates an bootloader structure which can be used universally on any external device
 - This bootloader structure can be copied to "problematic" distros and used after modifications
 - It might be necessary to mount `efi` partition, otherwise `/boot/efi` directory stays empty
@@ -48,19 +48,36 @@ total 4392
   - The last field allows to write a description (optional)
   - After changes were made, check `BOOTX64.CSV` with `nano` (`vi` does not display `^@`, if file content starts with strange characters) and delete "strange" characters (o^@k^@a^@y^@ is okay) at the beginning of the file (first line) when saved with LibreOffice or VSCode
  
-## Revert changes
+### Revert changes
 ```bash
 sudo grub-install # reverts the changes in /boot/efi/EFI/<distro-name>/
 sudo update-grub # reload config based on changes in /etc/default/grub
 ```
 
-## Warnings
+### Warnings
 - Do not try this approach, when Windows 10 is installed on the same disk (not checked for Windows 11 yet)
 - BIOS/UEFI will first look in the `/boot/efi/EFI/Microsoft/Boot` thus never loading linux, when selecting the drive directly from boot menu
 - `/boot/efi/EFI/BOOT` will be checked second (if ever)
 - To enforce usage of `/boot/efi/EFI/BOOT` required for Linux, a temporary solution would be renaming `/boot/efi/EFI/Microsoft/Boot` to `/boot/efi/EFI/Microsoft/NOT-Boot`
 
+## Solution (better!)
+
+### Fix during installation
+- Install Debian with `Expert Install`
+- During bootloader setup, select `Yes` when asked for "Force GRUB installation to the EFI removable media path"
+
+### Fix post installation
+- In Debian installer go to `Advanced options...` → `...Rescue mode`
+- Detect discs, and unlock encrypted discs if asked
+- Mount `/boot` and `/boot/efi` if asked by the prompt
+- In `Rescue operations` select `Force GRUB installation to the EFI removable media path`, `yes`, then reboot
+
+### Note on Windows
+- Be sure to save the passphrase for Bitlocker unlocking for Windows
+- This solution alters the known boot path known by Bitlocker, thus asking for the passphrase (!= Windows password)
+
 ## Sources
+[UEFI - Debian Wiki: Force grub-efi installation to the removable media path](https://wiki.debian.org/UEFI#Force_grub-efi_installation_to_the_removable_media_path)
 
 
 
