@@ -10,3 +10,5 @@ sudo dpkg-reconfigure console-setup
 # Select "Terminus"
 # Select "16x32 (framebuffer only)"
 ```
+
+Note: Changes are stored in `/etc/default/console-setup`
