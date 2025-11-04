@@ -11,4 +11,6 @@ sudo dpkg-reconfigure console-setup
 # Select "16x32 (framebuffer only)"
 ```
 
-Note: Changes are stored in `/etc/default/console-setup`
+Note: 
+- Current settings are stored `/etc/default/console-setup`
+- Editing this file does not affect the tty size, must be changed via command above
