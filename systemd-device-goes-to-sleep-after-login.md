@@ -41,6 +41,9 @@ HandleLidSwitch=ignore
 EOF
 ```
 
+- Reboot the PC
+- Do not try to reload `systemd-logind` with `systemctl`, might lead to blank screen or kicking you out of your session
+
 - Check logs
 ```bash
 journalctl -u systemd-logind
