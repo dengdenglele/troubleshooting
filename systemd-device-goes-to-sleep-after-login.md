@@ -7,7 +7,7 @@ After login into GNOME, system immediately goes into sleep mode
   
 Get diagnostics:
 ```bash
-journalctl -u systemd-logind
+journalctl -eu systemd-logind
 ```
 
 Output:
